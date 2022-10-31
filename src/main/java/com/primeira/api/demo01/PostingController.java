@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PostingController {
 
-    @PostMapping(value = "/{name}")
+    @PostMapping(value = "/cadastroDeNome")
     @ResponseStatus(HttpStatus.OK)
     public String postMethodName(@PathVariable String name) {
         return "Hello " + name;
