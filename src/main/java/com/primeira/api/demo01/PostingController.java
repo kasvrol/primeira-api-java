@@ -11,7 +11,7 @@ public class PostingController {
 
     @PostMapping(value = "/{name}")
     @ResponseStatus(HttpStatus.OK)
-    public String getMethodName(@PathVariable String name) {
+    public String postMethodName(@PathVariable String name) {
         return "Hello " + name;
     }
 
