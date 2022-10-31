@@ -2,7 +2,7 @@ package com.primeira.api.demo01;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostingController {
 
     @PostMapping(value = "/cadastroDeNome")
+    public String postMethodName(@RequestBody String name) {
+        return returnName(name);
+    }
+
     @ResponseStatus(HttpStatus.OK)
-    public String postMethodName(@PathVariable String name) {
-        return "Hello " + name;
+    public String returnName(String name) {
+        return name + " cadastrado com sucesso!";
     }
 
 }
